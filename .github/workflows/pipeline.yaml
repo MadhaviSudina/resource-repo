@@ -45,10 +45,10 @@ jobs:
         working-directory: terraform
 
       - name: Terraform Plan
-        run: terraform plan -var-file="../envs/${{ github.event.inputs.environment }}.tfvars"
+        run: terraform plan -var-file="/envs/${{ github.event.inputs.environment }}.tfvars"
         working-directory: terraform
         
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve -var-file="../envs/${{ github.event.inputs.environment }}.tfvars"
+        run: terraform apply -auto-approve -var-file="/envs/${{ github.event.inputs.environment }}.tfvars"
         working-directory: terraform
