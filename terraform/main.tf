@@ -9,7 +9,7 @@ module "vnet" {
 }
 
 module "vm" {
-  source = "git::https://github.com/your-org/modules-repo.git//modules/VM?ref=main"
+  source = "git::https://github.com/MadhaviSudina/modules-repo.git//modules/VM?ref=main"
   # Pass required variables
   proj-shortname         = var.proj-shortname
   environment            = var.environment
@@ -27,7 +27,7 @@ module "vm" {
 
 
 module "storage" {
-  source = "git::https://github.com/your-org/modules-repo.git//modules/storage?ref=main"
+  source = "git::https://github.com/MadhaviSudina/modules-repo.git//modules/storage?ref=main"
   # Pass required variables
   proj-shortname                  = var.proj-shortname
   environment                     = var.environment
@@ -39,7 +39,7 @@ module "storage" {
 }
 
 module "kv" {
-  source = "git::https://github.com/your-org/modules-repo.git//modules/keyvault?ref=main"
+  source = "git::https://github.com/MadhaviSudina/modules-repo.git//modules/keyvault?ref=main"
   # Pass required variables
   proj-shortname                         = var.proj-shortname
   environment                            = var.environment
