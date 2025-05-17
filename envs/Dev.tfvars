@@ -1,12 +1,12 @@
-rg_name   = "opellargdev"
-loc       = "eastus"
-vnet_name = "opella-d-eau-vnet"
-add_space = ["10.0.0.0/20"]
+rg_name        = "opellargdev"
+proj-shortname = "opella"
+environment    = "Dev"
+loc            = "eastus"
+add_space      = ["10.0.0.0/20"]
 subnets = {
   name             = "vm_subnet"
   address_prefixes = "10.0.1.0/29"
 }
-vm_name = "opella-d-linux-eau-vm"
 sku_vm  = "Standard_B1s"
 os_disk = "Standard HDD"
 source_image_reference = {
@@ -22,5 +22,3 @@ linux_configuration = {
 nic_name  = "opellanic"
 context   = "dev"
 subnet_id = "10.0.1.0/29"
-st_name   = "opelladeausta"
-kv_name   = "opelladeauakv"
