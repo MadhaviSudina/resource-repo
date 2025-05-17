@@ -2,8 +2,9 @@ module "vnet" {
   source = "git::https://github.com/MadhaviSudina/modules-repo.git//modules/vnet?ref=main"
   # Pass required variables
   resource_group      = var.rg_name
+  proj-shortname      = var.proj-shortname
+  environment         = var.environment
   location            = var.loc
-  name                = var.vnet_name
   vnet_address_spaces = var.add_space
   subnets             = var.subnets
 }
