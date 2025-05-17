@@ -11,8 +11,8 @@ subnets = {
 }
 sku_vm  = "Standard_B1s"
 os_disk = {
-  caching              = "ReadWrite"
-  storage_account_type = "Standard_HDD"
+  caching              = "ReadWrite"
+  storage_account_type = "Standard_HDD"
 }
 source_image_reference = {
   publisher = "Canonical"
