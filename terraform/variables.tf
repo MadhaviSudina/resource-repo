@@ -68,7 +68,7 @@ variable "subnet_id" {
 }
 
 
-variable "account_tier" {
+variable "acc_tier" {
   type    = string
   default = "Standard"
 }
