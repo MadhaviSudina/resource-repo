@@ -44,11 +44,19 @@ jobs:
         run: terraform init
         working-directory: terraform
 
+      
+      - name: Debug - Check tfvars file
+        run: |
+          echo "Current directory: $(pwd)"
+          ls -l ../envs
+        working-directory: terraform
+
+
       - name: Terraform Plan
-        run: terraform plan -var-file="/envs/${{ github.event.inputs.environment }}.tfvars"
+        run: terraform plan -var-file="../envs/${{ github.event.inputs.environment }}.tfvars"
         working-directory: terraform
         
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve -var-file="/envs/${{ github.event.inputs.environment }}.tfvars"
+        run: terraform apply -auto-approve -var-file="../envs/${{ github.event.inputs.environment }}.tfvars"
         working-directory: terraform
