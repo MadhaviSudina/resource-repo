@@ -9,12 +9,13 @@ module "vnet" {
 }
 
 module "vm" {
-  source = "git::https://github.com/MadhaviSudina/modules-repo.git//modules/VM?ref=main"
+  source = "git::https://github.com/your-org/modules-repo.git//modules/VM?ref=main"
   # Pass required variables
-  name                   = var.vm_namoved
+  proj-shortname         = var.proj-shortname
+  environment            = var.environment
   location               = var.loc
   resource_group         = var.rg_name
-  sku_name               = var.sku
+  sku_name               = var.sku_vm
   os_disk                = var.os_disk
   source_image_reference = var.source_image_reference
   linux_configuration    = var.linux_configuration
@@ -26,9 +27,10 @@ module "vm" {
 
 
 module "storage" {
-  source = "git::https://github.com/MadhaviSudina/modules-repo.git//modules/storage?ref=main"
+  source = "git::https://github.com/your-org/modules-repo.git//modules/storage?ref=main"
   # Pass required variables
-  name                            = var.st_name
+  proj-shortname                  = var.proj-shortname
+  environment                     = var.environment
   location                        = var.loc
   resource_group                  = var.rg_name
   account_tier                    = var.acc_tier
@@ -37,9 +39,11 @@ module "storage" {
 }
 
 module "kv" {
-  source = "git::https://github.com/MadhaviSudina/modules-repo.git//modules/keyvault?ref=main"
+  source = "git::https://github.com/your-org/modules-repo.git//modules/keyvault?ref=main"
   # Pass required variables
-  name                                   = var.kv_name
+  proj-shortname                         = var.proj-shortname
+  environment                            = var.environment
+  location                               = var.loc
   resource_group                         = var.rg_name
   sku_name                               = var.kv_sku
   enable_rbac_authorization              = var.enable_rbac_authorization
@@ -48,6 +52,5 @@ module "kv" {
   purge_protection_enabled               = var.purge_protection_enabled
   network_acl_default_action             = var.network_acl_default_action
   network_acl_bypass                     = var.network_acl_bypass
-  network_acl_ip_rules                   = var.network_acl_ip_rules
   network_acl_virtual_network_subnet_ids = var.network_acl_virtual_network_subnet_ids
 }
