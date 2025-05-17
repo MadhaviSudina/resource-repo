@@ -19,7 +19,6 @@ module "vm" {
   os_disk                = var.os_disk
   source_image_reference = var.source_image_reference
   linux_configuration    = var.linux_configuration
-  nic_name               = var.nic_name
   context                = var.context
   subnet_id              = var.subnet_id
 }

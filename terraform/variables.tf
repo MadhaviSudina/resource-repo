@@ -57,11 +57,6 @@ variable "linux_configuration" {
   })
 }
 
-variable "nic_name" {
-  type        = string
-  description = "The name of the nic to deploy."
-}
-
 variable "context" {
   type        = string
   description = "(Required) The contextual identifier which should be used for this resource. Changing this forces a new resource to be created."
