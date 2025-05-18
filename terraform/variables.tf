@@ -67,13 +67,6 @@ variable "context" {
   type        = string
   description = "(Required) The contextual identifier which should be used for this resource. Changing this forces a new resource to be created."
 }
-
-variable "subnet_id" {
-  type        = string
-  description = "Subnet id for the VM's"
-}
-
-
 variable "acc_tier" {
   type    = string
   default = "Standard"
