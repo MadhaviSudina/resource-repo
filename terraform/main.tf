@@ -21,7 +21,7 @@ module "vm" {
   source_image_reference = var.source_image_reference
   linux_configuration    = var.linux_configuration
   context                = var.context
-  subnet_id              = var.subnet_id
+  subnet_id              = module.vnet.subnets["subnet1"].id
 }
 
 
