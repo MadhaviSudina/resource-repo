@@ -26,4 +26,3 @@ linux_configuration = {
 }
 nic_name  = "opellanic"
 context   = "dev"
-subnet_id = "10.0.1.0/29"
