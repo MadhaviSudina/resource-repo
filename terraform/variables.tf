@@ -1,3 +1,9 @@
+
+variable "subscription_id" {}
+variable "tenant_id" {}
+variable "client_id" {}
+variable "client_secret" {}
+
 variable "rg_name" {
   type        = string
   description = "The name of the resource group in which to deploy."
