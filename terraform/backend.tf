@@ -1,8 +1,8 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = var.state_rg_name
-    storage_account_name = var.statefie_st
-    container_name       = var.blob_name
-    key                  = var.key
+    state_rg_name =  "test-rg" 
+    statefie_st   =  "statest0145"
+    blob_name     =  "tfstate"
+    key           =  "terraform.tfstate"
   }
 }
