@@ -1,4 +1,3 @@
-
 variable "subscription_id" {}
 variable "tenant_id" {}
 variable "client_id" {}
@@ -8,6 +7,27 @@ variable "rg_name" {
   type        = string
   description = "The name of the resource group in which to deploy."
 }
+
+variable "state_rg_name" {
+  type        = string
+  description = "statefile rg name"
+}
+
+variable "statefie_st" {
+  type        = string
+  description = "statefile storage account name"
+}
+
+variable "blob_name" {
+  type        = string
+  description = "statefile storage account blob name"
+}
+
+variable "key" {
+  type        = string
+  description = "statefile storage key name"
+}
+
 
 
 variable "loc" {
