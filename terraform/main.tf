@@ -22,6 +22,7 @@ module "vm" {
   linux_configuration    = var.linux_configuration
   context                = var.context
   subnet_id              = module.vnet.subnets["subnet1"].id
+  depends_on             = [module.vnet]
 }
 
 
@@ -36,6 +37,7 @@ module "storage" {
   account_tier                    = var.acc_tier
   account_replication_type        = var.rep_type
   allow_nested_items_to_be_public = var.allow_nested_items_to_be_public
+  depends_on                      = [module.vnet]
 }
 
 module "kv" {
@@ -53,4 +55,5 @@ module "kv" {
   network_acl_default_action             = var.network_acl_default_action
   network_acl_bypass                     = var.network_acl_bypass
   network_acl_virtual_network_subnet_ids = var.network_acl_virtual_network_subnet_ids
+  depends_on                             = [module.vnet]
 }
